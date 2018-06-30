@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <form [formGroup]="loginForm" (ngSubmit)="loginSubmit(loginForm.value)">
+    <div class="row">
+      <div class="col-lg-6 mb-3">
+        <label for="validationCustomUsername">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-user"></i></span>
+          </div>
+          <input type="text" class="form-control" formControlName="username" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 mb-3">
+        <label for="validationCustomUsername">Password</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-lock"></i></span>
+          </div>
+          <input type="text"  formControlName="password" class="form-control" id="validationCustomUsername" placeholder="******" aria-describedby="inputGroupPrepend" required>
+          <div class="invalid-feedback">
+            Please choose a username.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit"><span><i class="fa fa-send pr-1"></i></span>Login</button>
+  </form>
+</div>
+
+<br>
+touched  {{ loginForm.touched | json }}
+<br>
+valid  {{ loginForm.valid | json }}
+<br>
+invalid  {{ loginForm.invalid | json }}
+<br>
+pristine  {{ loginForm.pristine | json }}
+<br>
+value  {{ loginForm.value | json }}
